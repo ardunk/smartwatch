@@ -119,6 +119,7 @@ input:focus::-webkit-input-placeholder {
   min-height: 100vh;
   overflow-x: hidden;
   padding: 60px 0 26px 0;
+  transition: 500ms;
 }
 @media (max-width: 567px) {
   #wrapper {
@@ -581,7 +582,7 @@ main #banner::after {
   width: 516px;
   height: 100%;
   background-color: #000000;
-  transition: 300ms left;
+  transition: 500ms;
 }
 @media (max-width: 567px) {
   #sidebar {
