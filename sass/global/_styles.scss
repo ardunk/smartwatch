@@ -1,0 +1,176 @@
+#wrapper {
+  box-sizing: border-box;
+  position: relative;
+  max-width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding: 60px 0 26px 0;
+
+  @media (max-width: 567px) {
+    padding: 30px 0 60px 0;
+  }
+
+  .arrow {
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      border-radius: 5px;
+    }
+
+    &.right {
+      width: 21px;
+      height: 37px;
+      top: 50%;
+      right: -21px;
+      transform: translateY(-50%);
+
+      @media (max-width: 1919px) {
+        right: 21px;
+      }
+
+      &::before {
+        top: 65%;
+        transform: rotate(-45deg);
+      }
+      &::after {
+        bottom: 65%;
+        transform: rotate(45deg);
+      }
+      &::before,
+      &::after {
+        left: -15%;
+        height: 5px;
+        width: 27px;
+        background-color: #000000;
+      }
+
+      &:hover {
+        &::before,
+        &::after {
+          background-color: $pink;
+        }
+      }
+    }
+
+    &.bottom {
+      width: 37px;
+      height: 21px;
+      left: 50%;
+      bottom: 21px;
+      transform: translateX(-50%);
+
+      @media (max-width: 1359px) {
+        bottom: 0;
+      }
+
+      @media (max-width: 567px) {
+        bottom: -42px;
+      }
+
+      &::before {
+        left: 65%;
+        transform: rotate(45deg);
+      }
+      &::after {
+        right: 65%;
+        transform: rotate(-45deg);
+      }
+      &::before,
+      &::after {
+        top: -15%;
+        height: 27px;
+        width: 5px;
+        background-color: $grey;
+      }
+    }
+  }
+
+  &.sidebar {
+    &::after {
+      content: '';
+      position: fixed;
+      z-index: 3;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  &.dark {
+    background-color: $dark-blue;
+
+    .header-layout {
+      &-button {
+        &:hover{
+          span,
+          span::before,
+          span::after {
+            background-color: $pink;
+         }
+        }
+
+        span,
+        span::before,
+        span::after {
+          background-color: #ffffff;
+        }
+      }
+      &-logo {
+        background-image: url('../images/logo-light.png');
+      }
+      &-navbar {
+        color: #ffffff;
+      }
+      .navbar-button {
+        &:hover {
+          background-color: #ffffff;
+          color: #000000;
+        }
+      }
+    }
+
+    .text {
+      &-title {
+        color: #ffffff;
+      }
+      &-description {
+        color: $light-grey;
+      }
+    }
+
+    .carousel-item {
+      box-shadow: none;
+      background-color: $desaturated-blue;
+
+      &-title {
+        color: #ffffff;
+      }
+
+      &-subtitle {
+        color: #ffffff;
+      }
+    }
+
+    .arrow {
+      &.right {
+        &::before,
+        &::after {
+          background-color: #ffffff;
+        }
+        &:hover {
+          &::before,
+          &::after {
+            background-color: $pink;
+          }
+        }
+      }
+    }
+  }
+}
